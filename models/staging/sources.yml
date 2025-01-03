@@ -60,3 +60,41 @@ sources:
             tests:
               - unique
               - not_null
+      - name: "department"
+        description: "Tabela com a relação de departamentos."
+        columns:
+          - name: departmentid
+            tests:
+              - unique
+              - not_null
+      - name: "employee"
+        description: "Tabela com a relação de colaboradores."
+        columns:
+          - name: businessentityid
+            tests:
+              - unique
+              - not_null
+      - name: "purchaseorderdetail"
+        description: "Tabela com o registro das ordens de compra e itens."
+        columns:
+          - name: purchaseorderdetailid
+            tests:
+              - unique
+              - not_null
+          - name: purchaseorderid
+            tests:
+              - not_null
+      - name: "purchaseorderheader"
+        description: "Tabela com o registro das ordens de compra."
+        columns:
+          - name: purchaseorderid
+            tests:
+              - unique
+              - not_null
+      - name: "vendor"
+        description: "Tabela com a relação de fornecedores."
+        columns:
+          - name: businessentityid
+            tests:
+              - unique
+              - not_null
