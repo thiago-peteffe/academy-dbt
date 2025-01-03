@@ -1,0 +1,62 @@
+version: 2
+
+sources:
+  - name: raw_sap_adw
+    schema: raw_sap_adw
+    loaded_at_field: cast(ind_extraction_date as timestamp)
+    tables:
+      - name: "customer"
+        description: "Tabela com a relação de clientes."
+        columns:
+          - name: customerid
+            tests:
+              - unique
+              - not_null
+      - name: "salesorderdetail"
+        description: "Tabela com a relação de todos os pedidos de venda e seus itens."
+        columns:
+          - name: salesorderid
+            tests:
+              - not_null
+          - name: salesorderdetailid
+            tests:
+              - unique
+              - not_null
+      - name: "store"
+        description: "Tabela com a relação das lojas revendedoras."
+        columns:
+          - name: businessentityid
+            tests:
+              - unique
+              - not_null
+      - name: "salesorderheadersalesreason"
+        description: "Tabela de registro dos pedidos e motivos de venda."
+        columns:
+          - name: salesreasonid
+            tests:
+              - not_null
+          - name: salesorderid
+            tests:
+              - unique
+              - not_null
+      - name: "salesreason"
+        description: "Tabela com a relação dos motivos de venda."
+        columns:
+          - name: salesreasonid
+            tests:
+              - unique
+              - not_null
+      - name: "salesorderheader"
+        description: "Tabela com a relação de todos os pedidos de venda e seus itens."
+        columns:
+          - name: salesorderid
+            tests:
+              - unique
+              - not_null
+      - name: "salesterritory"
+        description: "Tabela com a relação de todos os pedidos de venda e seus itens."
+        columns:
+          - name: territoryid
+            tests:
+              - unique
+              - not_null
