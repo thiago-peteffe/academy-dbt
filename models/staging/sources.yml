@@ -98,3 +98,24 @@ sources:
             tests:
               - unique
               - not_null
+      - name: "product"
+        description: "Tabela com a relação dos produtos."
+        columns:
+          - name: productid
+            tests:
+              - unique
+              - not_null
+      - name: "productcategory"
+        description: "Tabela com a relação das categorias dos produtos."
+        columns:
+          - name: productcategoryid
+            tests:
+              - unique
+              - not_null
+      - name: "productmodel"
+        description: "Tabela com a relação dos modelos dos produtos."
+        columns:
+          - name: productmodelid
+            tests:
+              - unique
+              - not_null
