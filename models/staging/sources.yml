@@ -119,3 +119,58 @@ sources:
             tests:
               - unique
               - not_null
+      - name: "address"
+        description: "Informações de endereço residencial para clientes, funcionários e fornecedores."
+        columns:
+          - name: addressid
+            tests:
+              - unique
+              - not_null
+      - name: "addresstype"
+        description: "Tipos de endereços armazenados na tabela Address."
+        columns:
+          - name: addresstypeid
+            tests:
+              - unique
+              - not_null
+      - name: "businessentity"
+        description: "Fonte da ID que conecta fornecedores, clientes e funcionários com endereço e informações de contato."
+        columns:
+          - name: businessentityid
+            tests:
+              - unique
+              - not_null
+      - name: "businessentityaddress"
+        description: "Tabela de referência cruzada mapeando clientes, fornecedores e funcionários para seus endereços."
+        columns:
+          - name: businessentityid
+            tests:
+              - not_null
+          - name: addressid
+            tests:
+              - not_null
+          - name: addresstypeid
+            tests:
+              - not_null
+    
+      - name: "countryregion"
+        description: "Tabela de consulta contendo os códigos padrão ISO para países e regiões."
+        columns:
+          - name: countryregioncode
+            tests:
+              - unique
+              - not_null
+      - name: "person"
+        description: "Seres humanos envolvidos com a AdventureWorks: funcionários, contatos de clientes e contatos de fornecedores."
+        columns:
+          - name: businessentityid
+            tests:
+              - unique
+              - not_null
+      - name: "stateprovince"
+        description: "Tabela de consulta de estados e províncias."
+        columns:
+          - name: stateprovinceid
+            tests:
+              - unique
+              - not_null
