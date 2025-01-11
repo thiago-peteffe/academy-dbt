@@ -10,11 +10,4 @@ with
             , currentflag as situacao
         from {{ source('raw_sap_adw', 'employee') }}
     )
-    , source_with_sk as (
-        select
-            {{ numeric_surrogate_key(['id_entidade']) }} as sk_entidade
-            , *
-        from source_data
-    )
-select *
-from source_with_sk
+select * from source_data

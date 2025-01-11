@@ -10,11 +10,4 @@ with
             , rejectedqty as quantidade_rejeitada
         from {{ source('raw_sap_adw', 'purchaseorderdetail') }}
     )
-    , source_with_sk as (
-        select
-            {{ numeric_surrogate_key(['id_pedido_compra_item']) }} as sk_pedido_compra_item
-            , *
-        from source_data
-    )
-select *
-from source_with_sk
+select * from source_data

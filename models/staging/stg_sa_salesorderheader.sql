@@ -18,11 +18,4 @@ with
             , totaldue as venda_total
         from {{ source('raw_sap_adw', 'salesorderheader') }}
     )
-    , source_with_sk as (
-        select
-            {{ numeric_surrogate_key(['id_pedido']) }} as sk_pedido
-            , *
-        from source_data
-    )
-select *
-from source_with_sk
+select * from source_data

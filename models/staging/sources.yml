@@ -37,7 +37,6 @@ sources:
               - not_null
           - name: salesorderid
             tests:
-              - unique
               - not_null
       - name: "salesreason"
         description: "Tabela com a relação dos motivos de venda."
@@ -171,6 +170,13 @@ sources:
         description: "Tabela de consulta de estados e províncias."
         columns:
           - name: stateprovinceid
+            tests:
+              - unique
+              - not_null
+      - name: "productsubcategory"
+        description: "Tabela de sub-categoria dos produtos."
+        columns:
+          - name: productsubcategoryid
             tests:
               - unique
               - not_null

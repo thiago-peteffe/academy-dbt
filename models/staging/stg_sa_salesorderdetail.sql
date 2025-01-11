@@ -10,11 +10,4 @@ with
             , unitpricediscount as desconto
         from {{ source('raw_sap_adw', 'salesorderdetail') }}
     )
-    , source_with_sk as (
-        select
-            {{ numeric_surrogate_key(['id_pedido_item']) }} as sk_pedido_item
-            , *
-        from source_data
-    )
-select *
-from source_with_sk
+select * from source_data

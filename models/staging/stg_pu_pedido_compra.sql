@@ -13,11 +13,4 @@ with
             , freight as frete
         from {{ source('raw_sap_adw', 'purchaseorderheader') }}
     )
-    , source_with_sk as (
-        select
-            {{ numeric_surrogate_key(['id_pedido_compra']) }} as sk_pedido_compra
-            , *
-        from source_data
-    )
-select *
-from source_with_sk
+select * from source_data
