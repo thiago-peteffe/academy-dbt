@@ -1,0 +1,19 @@
+with
+    stg_sa_salesorderdetail as (
+        select
+            id_pedido
+            , id_pedido_item
+            , quantidade_ordem
+            , id_produto
+            , id_cupom
+            , round(preco_unitario, 2) as preco_unitario
+            , round(desconto, 2) as desconto
+        from {{ ref('stg_sa_salesorderdetail') }}
+    )
+    , stg_sa_salesorderdetail_sk as (
+        select
+            {{ numeric_surrogate_key(['id_pedido']) }} as sk_pedido
+            , *
+        from stg_sa_salesorderdetail
+    )
+select * from stg_sa_salesorderdetail_sk
