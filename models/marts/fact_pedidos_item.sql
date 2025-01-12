@@ -12,7 +12,9 @@ with
     )
     , stg_sa_salesorderdetail_sk as (
         select
-            {{ numeric_surrogate_key(['id_pedido']) }} as sk_pedido
+            {{ numeric_surrogate_key(['id_pedido_item']) }} as sk_pedido_item
+            , {{ numeric_surrogate_key(['id_pedido']) }} as sk_pedido
+            , {{ numeric_surrogate_key(['id_produto']) }} as sk_produto
             , *
         from stg_sa_salesorderdetail
     )

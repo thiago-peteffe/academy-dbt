@@ -22,6 +22,7 @@ with
             , id_cliente
             , id_vendedor
             , id_territory
+            , id_endereco
             , venda_subtotal
             , valor_imposto
             , custo_envio
@@ -31,7 +32,9 @@ with
     , stg_sa_salesorderheader_sk as (
         select
             {{ numeric_surrogate_key(['id_pedido']) }} as sk_pedido
+            , {{ numeric_surrogate_key(['id_cliente']) }} as sk_cliente
+            , {{ numeric_surrogate_key(['id_endereco']) }} as sk_endereco
             , *
         from stg_sa_salesorderheader
     )
-select * from stg_sa_salesorderheader
+select * from stg_sa_salesorderheader_sk

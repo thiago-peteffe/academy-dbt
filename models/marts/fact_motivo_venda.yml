@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: fact_motivo_venda
+    description: 'Tabela fato dos motivos de venda da Adventure Works.'
+    columns:
+      - name: 'sk_pedido_motivo_venda'
+        description: "Chave primária. Composta por: ide_pedido e id_motivo_venda."
+        tests:
+          - unique
+          - not_null
+
+      - name: 'sk_motivo_venda'
+        description: "Chave estrangeira da dim_motivo_venda. Composta por: id_motivo_venda."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_motivo_venda')
+              field: sk_motivo_venda
+
+      - name: 'id_pedido'
+        description: "Identificador único do pedido de venda."
+
+      - name: 'id_motivo_venda'
+        description: "Identificador único do motivo de venda."

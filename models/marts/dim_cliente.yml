@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: dim_cliente
+    description: 'Tabela dimensão de clientes da Adventure Works'
+    columns:
+      - name: 'sk_cliente'
+        description: "Chave primária. Composta por: id_cliente."
+        tests:
+          - unique
+          - not_null
+
+      - name: 'id_cliente'
+        description: "Identificador único do cliente."
+
+      - name: 'id_pessoa'
+        description: "Identificador único da pessoa."
+
+      - name: 'id_loja'
+        description: "Identificador único da loja."
+
+      - name: 'id_territorio'
+        description: "Identificador único do território."
+
+      - name: 'tipo_cliente'
+        description: "Indica se o cliente é PF (Pessoa Física) ou PJ (Pessoa Jurídica)."
+
+      - name: 'tipo_contato'
+        description: "Informa o tipo do contrato da pessoa: when tipo_pessoa, que pode ser: SC - Contato da loja, IN - Cliente individual (varejo), SP - Vendedor, EM - Funcionário (não vendas), VC - Contato do fornecedor ou GC - Contato geral."
+
+      - name: 'nome_completo'
+        description: "Nome completo da pessoa."
+
+      - name: 'nome_loja'
+        description: "Nome da loja do cliente PJ."
+
+      - name: 'id_vendedor'
+        description: "Identificador único do vendedor."

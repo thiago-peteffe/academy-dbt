@@ -1,0 +1,53 @@
+version: 2
+
+models:
+  - name: dim_produto
+    description: 'Tabela com a relação dos produtos da Adventure Works.'
+    columns:
+      - name: 'sk_produto'
+        description: "Chave primária. Composta por: id_produto."
+        tests:
+          - unique
+          - not_null
+
+      - name: 'id_produto'
+        description: "Identificador único do produto."
+
+      - name: 'nome_produto'
+        description: "Nome do produto."
+
+      - name: 'numero_produto'
+        description: "Número de registro do produto."
+
+      - name: 'tipo_produto'
+        description: "Tipo do produto, que pode ser Comprado ou Manufaturado."
+
+      - name: 'tipo_comercial'
+        description: "Tipo comercial, que pode ser Vendável ou Não vendável."
+
+      - name: 'cor_produto'
+        description: "Cor do produto."
+
+      - name: 'custo_padrao'
+        description: "Custo padrão do produto."
+
+      - name: 'preco_venda'
+        description: "Preço de venda do produto."
+
+      - name: 'linha_produto'
+        description: "Linha do produto, que pode ser Estrada, Montanha, Turismo ou Padrão."
+
+      - name: 'classe_produto'
+        description: "Classe do produto, que ser Alto, Médio ou Baixo."
+
+      - name: 'estilo_produto'
+        description: "Estilo do produto, que pode ser Feminino, Masculino ou Universal."
+
+      - name: 'nome_modelo'
+        description: "Nome do modelo do produto."
+
+      - name: 'nome_categoria'
+        description: "Nome da categoria do produto."
+
+      - name: 'nome_subcategoria'
+        description: "Nome da subcategoria do produto."

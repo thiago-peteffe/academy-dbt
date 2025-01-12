@@ -25,10 +25,9 @@ with
                 else 'Não especificado'
             end as linha_produto
             , case
-                when classe = 'R' then 'Estrada'
-                when classe = 'M' then 'Montanha'
-                when classe = 'T' then 'Turismo'
-                when classe = 'S' then 'Padrão'
+                when classe = 'H' then 'Alto'
+                when classe = 'M' then 'Médio'
+                when classe = 'L' then 'Baixo'
                 else 'Não especificado'
             end as classe_produto
             , case

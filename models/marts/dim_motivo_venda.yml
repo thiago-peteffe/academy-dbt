@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: dim_motivo_venda
+    description: 'Tabela dimensão dos motivas das vendas da Adventure Works'
+    columns:
+      - name: 'sk_motivo_venda'
+        description: "Chave primária. Composta por: id_motivo_venda."
+        tests:
+          - unique
+          - not_null
+
+      - name: 'id_motivo_venda'
+        description: "Identificador único do motivo da venda."
+
+      - name: 'nome_motivo_venda'
+        description: "Nome do motivo da venda, que pode ser Preço, Em Promoçao, Anúncio em Revista, Anúncio em Televisão, Fabricante, Avaliação, Evento de demonstração, Patrocínio, Qualidade ou Outros."
+
+      - name: 'tipo_motivo_venda'
+        description: "Tipo do motivo da venda, que pode ser Promoçao, Marketing ou Outro."

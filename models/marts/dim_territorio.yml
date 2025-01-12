@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: dim_territorio
+    description: 'Tabela com a relação dos territórios de venda da Adventure Works.'
+    columns:
+      - name: 'sk_endereco'
+        description: "Chave primária. Composta por: id_endereco."
+        tests:
+          - unique
+          - not_null
+
+      - name: 'id_endereco'
+        description: "Identificador único do endereço."
+
+      - name: 'cidade'
+        description: "Nome da cidade."
+
+      - name: 'id_estado_provincia'
+        description: "Identificador único do estado ou província."
+
+      - name: 'codigo_estado_provincia'
+        description: "Código do estado ou província."
+
+      - name: 'nome_estado_provincia'
+        description: "Nome do estado ou província."
+
+      - name: 'id_territorio'
+        description: "Identificador único do território."
+
+      - name: 'nome_territorio'
+        description: "Nome do território."
+
+      - name: 'grupo_territorio'
+        description: "Grupo geográfico do território."
+
+      - name: 'codigo_regiao_pais'
+        description: "Código da região ou país."
+
+      - name: 'nome_regiao_pais'
+        description: "Nome da região ou país."

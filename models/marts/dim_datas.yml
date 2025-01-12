@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: dim_datas
+    description: 'Tabela dimensão de calendário.'
+    columns:
+      - name: 'data'
+        description: "Chave primária."
+        tests:
+          - unique
+          - not_null
+
+      - name: 'dia_da_semana'
+        description: "Número do dia da semana."
+
+      - name: 'dia_da_semana_iso'
+        description: "Número do dia da semana no formato ISO."
+
+      - name: 'nome_dia_da_semana'
+        description: "Nome do dia da semana."
+
+      - name: 'dia_do_mes'
+        description: "Dia do mês."
+
+      - name: 'semana_do_ano'
+        description: "Número da semana do ano."
+
+      - name: 'mes'
+        description: "Número do mês."
+
+      - name: 'nome_do_mes'
+        description: "Nome do mês."
+
+      - name: 'bimestre'
+        description: "Número do bimestre."
+
+      - name: 'trimestre'
+        description: "Número do trimestre."
+
+      - name: 'semestre'
+        description: "Número do semestre."
+
+      - name: 'ano'
+        description: "Número do ano."

@@ -1,0 +1,48 @@
+version: 2
+
+models:
+  - name: fact_pedidos_item
+    description: 'Tabela fato dos pedidos de venda e itens da Adventure Works.'
+    columns:
+      - name: 'sk_pedido_item'
+        description: "Chave primária. Composta por: id_pedido_item."
+        tests:
+          - unique
+          - not_null
+
+      - name: 'sk_pedido'
+        description: "Chave estrangeira da fact_pedidos. Composta por: id_pedido."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('fact_pedidos')
+              field: sk_pedido
+
+      - name: 'sk_produto'
+        description: "Chave estrangeira da dim_produto. Composta por: id_produto."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_produto')
+              field: sk_produto
+
+      - name: 'id_pedido'
+        description: "Identificador único do pedido de venda."
+
+      - name: 'id_pedido_item'
+        description: "Identificador único do pedido de venda item."
+
+      - name: 'quantidade_ordem'
+        description: "Quantidade de itens referente ao pedido de venda."
+
+      - name: 'id_produto'
+        description: "Identificador único do produto."
+
+      - name: 'id_cupom'
+        description: "Identificador único do cupom promocional, caso exista."
+
+      - name: 'preco_unitario'
+        description: "Preço unitário do item associado ao pedido de venda."
+
+      - name: 'desconto'
+        description: "Desconto do item associado ao pedido de venda."

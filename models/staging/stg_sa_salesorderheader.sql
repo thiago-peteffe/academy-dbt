@@ -10,7 +10,7 @@ with
             , customerid as id_cliente
             , salespersonid as id_vendedor
             , territoryid as id_territory
-            , shiptoaddressid as endereco_entrega
+            , shiptoaddressid as id_endereco
             , shipmethodid as metodo_envio
             , round(subtotal, 2) AS venda_subtotal
             , round(taxamt, 2) AS valor_imposto
