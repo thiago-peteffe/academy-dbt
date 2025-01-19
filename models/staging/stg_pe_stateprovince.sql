@@ -6,6 +6,6 @@ with
             , countryregioncode as codigo_regiao_pais
             , name as nome_estado_provincia
             , territoryid as id_territorio
-        from {{ source('raw_sap_adw', 'stateprovince') }}
+        from {{ source('raw_aw_person', 'stateprovince') }}
     )
 select * from source_data

@@ -8,6 +8,6 @@ with
             , unitprice as preco_unitario
             , receivedqty as quantidade_recebida
             , rejectedqty as quantidade_rejeitada
-        from {{ source('raw_sap_adw', 'purchaseorderdetail') }}
+        from {{ source('raw_aw_purchasing', 'purchaseorderdetail') }}
     )
 select * from source_data

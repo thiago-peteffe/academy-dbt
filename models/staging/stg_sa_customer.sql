@@ -5,6 +5,6 @@ with
             , personid as id_pessoa
             , storeid as id_loja
             , territoryid as id_territorio
-        from {{ source('raw_sap_adw', 'customer') }}
+        from {{ source('raw_aw_sales', 'customer') }}
     )
 select * from source_data

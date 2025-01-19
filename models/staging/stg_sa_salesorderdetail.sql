@@ -8,6 +8,6 @@ with
             , specialofferid as id_cupom
             , unitprice as preco_unitario
             , unitpricediscount as desconto
-        from {{ source('raw_sap_adw', 'salesorderdetail') }}
+        from {{ source('raw_aw_sales', 'salesorderdetail') }}
     )
 select * from source_data

@@ -26,6 +26,6 @@ with
                 when salesreasonid = 9 then 'Outro'
                 when salesreasonid = 10 then 'Outro'
             end as tipo_motivo_venda
-        from {{ source('raw_sap_adw', 'salesreason') }}
+        from {{ source('raw_aw_sales', 'salesreason') }}
     )
 select * from source_data

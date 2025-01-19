@@ -40,6 +40,7 @@ models:
     intermediate:
      +materialized: view
     marts:
+      +schema: public
       +materialized: table
 
 

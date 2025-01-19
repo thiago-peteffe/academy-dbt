@@ -5,6 +5,6 @@ with
             , name as nome_territorio
             , countryregioncode as codigo_regiao_pais
             , `group` as grupo_territorio
-        from {{ source('raw_sap_adw', 'salesterritory') }}
+        from {{ source('raw_aw_sales', 'salesterritory') }}
     )
 select * from source_data

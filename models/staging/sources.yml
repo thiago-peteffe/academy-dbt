@@ -1,17 +1,17 @@
 version: 2
 
 sources:
-  - name: raw_sap_adw
-    schema: raw_sap_adw
-    loaded_at_field: cast(ind_extraction_date as timestamp)
+  - name: raw_aw_sales
+    schema: raw_aw_sales
     tables:
-      - name: "customer"
+      - name: "customer" 
         description: "Tabela com a relação de clientes."
         columns:
           - name: customerid
             tests:
               - unique
               - not_null
+
       - name: "salesorderdetail"
         description: "Tabela com a relação de todos os pedidos de venda e seus itens."
         columns:
@@ -22,6 +22,7 @@ sources:
             tests:
               - unique
               - not_null
+
       - name: "store"
         description: "Tabela com a relação das lojas revendedoras."
         columns:
@@ -29,6 +30,7 @@ sources:
             tests:
               - unique
               - not_null
+
       - name: "salesorderheadersalesreason"
         description: "Tabela de registro dos pedidos e motivos de venda."
         columns:
@@ -38,6 +40,7 @@ sources:
           - name: salesorderid
             tests:
               - not_null
+
       - name: "salesreason"
         description: "Tabela com a relação dos motivos de venda."
         columns:
@@ -45,6 +48,7 @@ sources:
             tests:
               - unique
               - not_null
+
       - name: "salesorderheader"
         description: "Tabela com a relação de todos os pedidos de venda e seus itens."
         columns:
@@ -52,6 +56,7 @@ sources:
             tests:
               - unique
               - not_null
+
       - name: "salesterritory"
         description: "Tabela com a relação de todos os pedidos de venda e seus itens."
         columns:
@@ -59,6 +64,10 @@ sources:
             tests:
               - unique
               - not_null
+
+  - name: raw_aw_humanresources
+    schema: raw_aw_humanresources
+    tables:
       - name: "department"
         description: "Tabela com a relação de departamentos."
         columns:
@@ -66,6 +75,7 @@ sources:
             tests:
               - unique
               - not_null
+
       - name: "employee"
         description: "Tabela com a relação de colaboradores."
         columns:
@@ -73,6 +83,10 @@ sources:
             tests:
               - unique
               - not_null
+
+  - name: raw_aw_purchasing
+    schema: raw_aw_purchasing
+    tables:
       - name: "purchaseorderdetail"
         description: "Tabela com o registro das ordens de compra e itens."
         columns:
@@ -83,6 +97,7 @@ sources:
           - name: purchaseorderid
             tests:
               - not_null
+
       - name: "purchaseorderheader"
         description: "Tabela com o registro das ordens de compra."
         columns:
@@ -90,6 +105,7 @@ sources:
             tests:
               - unique
               - not_null
+
       - name: "vendor"
         description: "Tabela com a relação de fornecedores."
         columns:
@@ -97,6 +113,10 @@ sources:
             tests:
               - unique
               - not_null
+
+  - name: raw_aw_production
+    schema: raw_aw_production
+    tables:
       - name: "product"
         description: "Tabela com a relação dos produtos."
         columns:
@@ -104,6 +124,7 @@ sources:
             tests:
               - unique
               - not_null
+
       - name: "productcategory"
         description: "Tabela com a relação das categorias dos produtos."
         columns:
@@ -111,6 +132,7 @@ sources:
             tests:
               - unique
               - not_null
+
       - name: "productmodel"
         description: "Tabela com a relação dos modelos dos produtos."
         columns:
@@ -118,6 +140,18 @@ sources:
             tests:
               - unique
               - not_null
+
+      - name: "productsubcategory"
+        description: "Tabela de sub-categoria dos produtos."
+        columns:
+          - name: productsubcategoryid
+            tests:
+              - unique
+              - not_null
+
+  - name: raw_aw_person
+    schema: raw_aw_person
+    tables:
       - name: "address"
         description: "Informações de endereço residencial para clientes, funcionários e fornecedores."
         columns:
@@ -125,6 +159,7 @@ sources:
             tests:
               - unique
               - not_null
+
       - name: "addresstype"
         description: "Tipos de endereços armazenados na tabela Address."
         columns:
@@ -132,6 +167,7 @@ sources:
             tests:
               - unique
               - not_null
+
       - name: "businessentity"
         description: "Fonte da ID que conecta fornecedores, clientes e funcionários com endereço e informações de contato."
         columns:
@@ -139,6 +175,7 @@ sources:
             tests:
               - unique
               - not_null
+
       - name: "businessentityaddress"
         description: "Tabela de referência cruzada mapeando clientes, fornecedores e funcionários para seus endereços."
         columns:
@@ -159,6 +196,7 @@ sources:
             tests:
               - unique
               - not_null
+
       - name: "person"
         description: "Seres humanos envolvidos com a AdventureWorks: funcionários, contatos de clientes e contatos de fornecedores."
         columns:
@@ -166,17 +204,11 @@ sources:
             tests:
               - unique
               - not_null
+
       - name: "stateprovince"
         description: "Tabela de consulta de estados e províncias."
         columns:
           - name: stateprovinceid
-            tests:
-              - unique
-              - not_null
-      - name: "productsubcategory"
-        description: "Tabela de sub-categoria dos produtos."
-        columns:
-          - name: productsubcategoryid
             tests:
               - unique
               - not_null

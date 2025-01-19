@@ -14,6 +14,6 @@ with
             , trim(cast(style as string)) as estilo
             , productsubcategoryid as id_subcategoria_produto
             , productmodelid as id_modelo_produto
-        from {{ source('raw_sap_adw', 'product') }}
+        from {{ source('raw_aw_production', 'product') }}
     )
 select * from source_data

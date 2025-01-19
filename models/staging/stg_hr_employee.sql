@@ -8,6 +8,6 @@ with
             , gender as sexo
             , hiredate as data_contratacao
             , currentflag as situacao
-        from {{ source('raw_sap_adw', 'employee') }}
+        from {{ source('raw_aw_humanresources', 'employee') }}
     )
 select * from source_data

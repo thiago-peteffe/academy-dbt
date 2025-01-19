@@ -16,6 +16,6 @@ with
             , round(taxamt, 2) AS valor_imposto
             , round(freight, 2) AS custo_envio
             , round(totaldue, 2) AS venda_total
-        from {{ source('raw_sap_adw', 'salesorderheader') }}
+        from {{ source('raw_aw_sales', 'salesorderheader') }}
     )
 select * from source_data

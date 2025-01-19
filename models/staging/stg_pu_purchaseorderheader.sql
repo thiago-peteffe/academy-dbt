@@ -11,6 +11,6 @@ with
             , subtotal as compra_subtotal
             , taxamt as compra_imposto
             , freight as frete
-        from {{ source('raw_sap_adw', 'purchaseorderheader') }}
+        from {{ source('raw_aw_purchasing', 'purchaseorderheader') }}
     )
 select * from source_data
