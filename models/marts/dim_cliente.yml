@@ -36,3 +36,6 @@ models:
 
       - name: 'id_vendedor'
         description: "Identificador único do vendedor."
+
+      - name: 'nome_cliente'
+        description: "Nome do cliente."

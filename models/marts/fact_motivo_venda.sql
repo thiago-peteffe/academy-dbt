@@ -9,6 +9,7 @@ with
         select
             {{ numeric_surrogate_key(['id_pedido', 'id_motivo_venda']) }} as sk_pedido_motivo_venda
             , {{ numeric_surrogate_key(['id_motivo_venda']) }} as sk_motivo_venda
+            , {{ numeric_surrogate_key(['id_pedido']) }} as sk_pedido
             , *
         from stg_sa_salesorderheadersalesreason
     )

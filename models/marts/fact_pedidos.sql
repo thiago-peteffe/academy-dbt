@@ -20,6 +20,10 @@ with
             end as flag_pedido
             , numero_pedido
             , id_cliente
+            , case
+                when id_cartao_credito is not null then 'Cartão de Crédito'
+                else 'Outros Meios'
+            end as metodo_pagamento
             , id_vendedor
             , id_territory
             , id_endereco
@@ -34,7 +38,27 @@ with
             {{ numeric_surrogate_key(['id_pedido']) }} as sk_pedido
             , {{ numeric_surrogate_key(['id_cliente']) }} as sk_cliente
             , {{ numeric_surrogate_key(['id_endereco']) }} as sk_endereco
+            , {{ numeric_surrogate_key(['id_vendedor']) }} as sk_vendedor
             , *
         from stg_sa_salesorderheader
     )
-select * from stg_sa_salesorderheader_sk
+select
+    sk_pedido
+    , sk_cliente
+    , sk_endereco
+    , sk_vendedor
+    , id_pedido
+    , id_cliente
+    , id_endereco
+    , id_vendedor
+    , id_territory
+    , data_pedido
+    , status_pedido
+    , flag_pedido
+    , numero_pedido
+    , metodo_pagamento
+    , venda_subtotal
+    , valor_imposto
+    , custo_envio
+    , venda_total
+from stg_sa_salesorderheader_sk

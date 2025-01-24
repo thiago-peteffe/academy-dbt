@@ -46,3 +46,6 @@ models:
 
       - name: 'desconto'
         description: "Desconto do item associado ao pedido de venda."
+
+      - name: 'preco_total'
+        description: "Preço total do item associado ao pedido de venda."

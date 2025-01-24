@@ -7,6 +7,7 @@ with
             , id_produto
             , id_cupom
             , round(preco_unitario, 2) as preco_unitario
+            , round((quantidade_ordem * preco_unitario), 2) as preco_total 
             , round(desconto, 2) as desconto
         from {{ ref('stg_sa_salesorderdetail') }}
     )

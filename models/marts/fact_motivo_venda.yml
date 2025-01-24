@@ -18,6 +18,14 @@ models:
               to: ref('dim_motivo_venda')
               field: sk_motivo_venda
 
+      - name: 'sk_pedido'
+        description: "Chave estrangeira da fact_pedidos. Composta por: id_pedido."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('fact_pedidos')
+              field: sk_pedido
+
       - name: 'id_pedido'
         description: "Identificador único do pedido de venda."
 

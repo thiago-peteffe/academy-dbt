@@ -12,6 +12,14 @@ sources:
               - unique
               - not_null
 
+      - name: "creditcard"
+        description: "Informação de cartão de crédito dos clientes."
+        columns:
+          - name: id_cartao_credito
+            tests:
+              - unique
+              - not_null
+
       - name: "salesorderdetail"
         description: "Tabela com a relação de todos os pedidos de venda e seus itens."
         columns:
@@ -61,6 +69,14 @@ sources:
         description: "Tabela com a relação de todos os pedidos de venda e seus itens."
         columns:
           - name: territoryid
+            tests:
+              - unique
+              - not_null
+
+      - name: "salesperson"
+        description: "Tabela com a relação dos vendedores."
+        columns:
+          - name: id_entidade
             tests:
               - unique
               - not_null
