@@ -1,0 +1,48 @@
+version: 2
+
+models:
+  - name: fact_compras_item
+    description: 'Tabela fato dos pedidos de compra e itens da Adventure Works.'
+    columns:
+      - name: 'sk_pedido_compra'
+        description: "Chave estrangeira. Composta por: id_pedido_compra."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('fact_compras')
+              field: 'sk_pedido_compra'
+
+      - name: 'sk_pedido_compra_item'
+        description: "Chave primária. Composta por id_pedido_compra_item."
+        tests:
+          - unique
+          - not_null
+
+      - name: 'sk_produto'
+        description: "Chaves estrangeira. Composta por id_produto."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_produto')
+              field: 'sk_produto'
+
+      - name: 'id_pedido_compra'
+        description: "Identificador único do pedido de compra."
+
+      - name: 'id_pedido_compra_item'
+        description: "Identificador único do pedido de compra relacionado ao item."
+
+      - name: 'quantidade_ordem'
+        description: "Quantidade comprada."
+
+      - name: 'id_produto'
+        description: "Identificador único do produto."
+
+      - name: 'preco_unitario'
+        description: "Preço unitário do produto."
+
+      - name: 'quantidade_recebida'
+        description: "Quantidade recebida referente à ordem de compra."
+
+      - name: 'quantidade_rejeitada'
+        description: "Quantidade rejeitada referente à ordem de compra."

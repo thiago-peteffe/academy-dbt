@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: fact_compras
+    description: 'Tabela fato dos pedidos de compra da Adventure Works.'
+    columns:
+      - name: 'sk_pedido_compra'
+        description: "Chave primária. Composta por: id_pedido_compra."
+        tests:
+          - unique
+          - not_null
+
+      - name: 'sk_fornecedor'
+        description: "Chave estrangeira. Composta por id_fornecedor."
+
+      - name: 'id_pedido_compra'
+        description: "Identificador único do pedido de compra."
+
+      - name: 'status_pedido_compra'
+        description: "Status do pedido de compra."
+
+      - name: 'id_fornecedor'
+        description: "Identificador único do fornecedor."
+
+      - name: 'data_ordem'
+        description: "Data de emissão da ordem de compra."
+
+      - name: 'compra_subtotal'
+        description: "Valor da comrpa líquida, desconsiderando impostos e frete."
+
+      - name: 'compra_imposto'
+        description: "Valor de impostos referente à compra."
+
+      - name: 'frete'
+        description: "Custo de frete referente à compra."
+
+      - name: 'compra_total'
+        description: "Valor total da compra (compra_subtotal + compra_imposto + frete + compra_total)."

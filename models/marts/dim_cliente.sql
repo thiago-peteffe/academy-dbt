@@ -42,40 +42,22 @@ with
             , id_vendedor
         from {{ ref('stg_sa_store') }}
     )
-    , stg_sa_store_with_sk as (
-        select
-            {{ numeric_surrogate_key(['id_vendedor']) }} as sk_vendedor
-            , *
-        from stg_sa_store
-    )
-    /*, stg_pe_businessentity as (
-        select id_entidade
-        from {{ ref('stg_pe_businessentity') }}
-    )
-    , stg_pe_businessentityaddress as (
-        select
-            id_entidade
-            , id_endereco
-            , id_tipo_endereco
-        from {{ ref('stg_pe_businessentityaddress') }}
-    )*/
     , joined as (
         select
             stg_sa_customer_with_sk.sk_cliente
             , stg_sa_customer_with_sk.id_cliente
             , stg_sa_customer_with_sk.id_pessoa
             , stg_sa_customer_with_sk.id_loja
-            , stg_sa_store_with_sk.id_vendedor
-            , stg_sa_store_with_sk.sk_vendedor
+            , stg_sa_store.id_vendedor
             , case
                 when stg_sa_customer_with_sk.tipo_cliente = 'PF' then nome_completo
-                else stg_sa_store_with_sk.nome_loja
+                else stg_sa_store.nome_loja
             end as nome_cliente
             , stg_sa_customer_with_sk.id_territorio
             , stg_sa_customer_with_sk.tipo_cliente
             , stg_pe_person.tipo_contato
         from stg_sa_customer_with_sk
         left join stg_pe_person on stg_sa_customer_with_sk.id_pessoa = stg_pe_person.id_entidade
-        left join stg_sa_store_with_sk on stg_sa_customer_with_sk.id_loja = stg_sa_store_with_sk.id_entidade
+        left join stg_sa_store on stg_sa_customer_with_sk.id_loja = stg_sa_store.id_entidade
     )
 select * from joined

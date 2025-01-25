@@ -66,7 +66,6 @@ with
             , dim_cliente.nome_cliente
             , dim_cliente.id_territorio
             , dim_cliente.tipo_cliente
-            , dim_cliente.tipo_contato
             , dim_cliente.id_vendedor
             , fact_pedidos_territory.nome_estado_provincia
             , fact_pedidos_territory.nome_territorio

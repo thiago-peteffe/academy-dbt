@@ -19,6 +19,12 @@ models:
       - name: 'id_loja'
         description: "Identificador único da loja."
 
+      - name: 'id_vendedor'
+        description: "Identificador único do vendedor."
+
+      - name: 'nome_cliente'
+        description: "Nome do cliente."
+
       - name: 'id_territorio'
         description: "Identificador único do território."
 
@@ -27,15 +33,3 @@ models:
 
       - name: 'tipo_contato'
         description: "Informa o tipo do contrato da pessoa: when tipo_pessoa, que pode ser: SC - Contato da loja, IN - Cliente individual (varejo), SP - Vendedor, EM - Funcionário (não vendas), VC - Contato do fornecedor ou GC - Contato geral."
-
-      - name: 'nome_completo'
-        description: "Nome completo da pessoa."
-
-      - name: 'nome_loja'
-        description: "Nome da loja do cliente PJ."
-
-      - name: 'id_vendedor'
-        description: "Identificador único do vendedor."
-
-      - name: 'nome_cliente'
-        description: "Nome do cliente."

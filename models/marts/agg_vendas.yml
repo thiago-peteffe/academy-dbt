@@ -1,0 +1,75 @@
+version: 2
+
+models:
+  - name: agg_vendas
+    description: 'Tabela agregada com as vendas por pedido e cliente da Adventure Works.'
+    columns:
+      - name: 'sk_pedido'
+        description: "Chave primária. Composta por: id_pedido."
+        tests:
+          - unique
+          - not_null
+
+      - name: 'sk_cliente'
+        description: "Chave estrangeira da dim_cliente. Composta por: id_cliente."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_cliente')
+              field: sk_cliente
+
+      - name: 'sk_endereco'
+        description: "Chave estrangeira da dim_territorio. Composta por: id_endereco."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_territorio')
+              field: sk_endereco
+
+      - name: 'data_pedido'
+        description: "Chave estrangeira de dim_datas. Data de emissão do pedido de venda."
+
+      - name: 'status_pedido'
+        description: "Status do pedido de venda, que pode ser Em processamento, Aprovado, Em espera, Rejeitado, Enviado ou Cancelado."
+
+      - name: 'flag_pedido'
+        description: "Flag que indica se o pedido de venda foi feito pelo vendedor ou feito on-line pelo cliente."
+
+      - name: 'id_cliente'
+        description: "Identificador único do cliente."
+
+      - name: 'nome_cliente'
+        description: "Nome do cliente."
+
+      - name: 'id_territorio'
+        description: "Identificador único do território de vendas."
+
+      - name: 'tipo_cliente'
+        description: "Identificador único do território de vendas."
+
+      - name: 'id_vendedor'
+        description: "Identificador único do vendedor."
+
+      - name: 'nome_estado_provincia'
+        description: "Nome do estado ou província."
+
+      - name: 'nome_territorio'
+        description: "Nome do território."
+
+      - name: 'grupo_territorio'
+        description: "Grupo geográfico do território."
+
+      - name: 'nome_regiao_pais'
+        description: "Nome da região ou país."
+
+      - name: 'venda_subtotal'
+        description: "Subtotal de vendas, sem considerar impostos e custo de envio."
+
+      - name: 'valor_imposto'
+        description: "Valor do imposto do pedido de venda."
+
+      - name: 'custo_envio'
+        description: "Custo de envio do pedido de venda."
+
+      - name: 'venda_total'
+        description: "Venda total do pedido de venda. Soma de 'venda_subtotal', 'valor_imposto' e 'custo_envio'."

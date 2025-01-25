@@ -15,7 +15,7 @@ sources:
       - name: "creditcard"
         description: "Informação de cartão de crédito dos clientes."
         columns:
-          - name: id_cartao_credito
+          - name: creditcardid
             tests:
               - unique
               - not_null
@@ -76,7 +76,7 @@ sources:
       - name: "salesperson"
         description: "Tabela com a relação dos vendedores."
         columns:
-          - name: id_entidade
+          - name: businessentityid
             tests:
               - unique
               - not_null

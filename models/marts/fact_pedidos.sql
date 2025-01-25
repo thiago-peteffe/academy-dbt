@@ -38,7 +38,6 @@ with
             {{ numeric_surrogate_key(['id_pedido']) }} as sk_pedido
             , {{ numeric_surrogate_key(['id_cliente']) }} as sk_cliente
             , {{ numeric_surrogate_key(['id_endereco']) }} as sk_endereco
-            , {{ numeric_surrogate_key(['id_vendedor']) }} as sk_vendedor
             , *
         from stg_sa_salesorderheader
     )
@@ -46,7 +45,6 @@ select
     sk_pedido
     , sk_cliente
     , sk_endereco
-    , sk_vendedor
     , id_pedido
     , id_cliente
     , id_endereco

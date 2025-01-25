@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: agg_top10_2011
+    description: 'Tabela agregada com o top 10 de vendas por clientes da Adventure Works em 2011.'
+    columns:
+      - name: 'sk_cliente'
+        description: "Chave primária. Composta por: id_cliente."
+        tests:
+          - unique
+          - not_null
+
+      - name: 'sk_endereco'
+        description: "Chave estrangeira. Composta por id_endereco."
+
+      - name: 'id_cliente'
+        description: "Identificador único do cliente."
+
+      - name: 'nome_cliente'
+        description: "Nome do cliente."
+
+      - name: 'id_territorio'
+        description: "Identificador único do território."
+
+      - name: 'tipo_cliente'
+        description: "Indica se o cliente é PF (Pessoa Física) ou PJ (Pessoa Jurídica)."
+
+      - name: 'nome_estado_provincia'
+        description: "Nome do estado ou província."
+
+      - name: 'nome_territorio'
+        description: "Nome do território."
+
+      - name: 'grupo_territorio'
+        description: "Grupo geográfico do território."
+
+      - name: 'nome_regiao_pais'
+        description: "Nome da região ou país."
+
+      - name: 'venda_liquida'
+        description: "Venda líquida (descontando custo de impostos e custo de frete) do cliente."
+
+      - name: 'faturamento'
+        description: "Faturamento bruto do cliente (preço total + impostos + frete)."
