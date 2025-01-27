@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: agg_regiao_vendedor
+    description: 'Tabela agregada de vendas mensal por região e vendedor.'
+    columns:
+      - name: 'nome_regiao_pais'
+        description: "Nome da região ou país."
+
+      - name: 'vendedor'
+        description: "Nome do vendedor."
+
+      - name: 'ano'
+        description: "Ano da venda."
+
+      - name: 'mes'
+        description: "Mês da venda."
+
+      - name: 'venda_subtotal'
+        description: "Venda líquida de imposto e frete."
+
+      - name: 'valor_imposto'
+        description: "Valor do imposto referente à venda."
+
+      - name: 'custo_envio'
+        description: "Custo do frete referente à venda."
+
+      - name: 'venda_total'
+        description: "Venda total (venda_subtotal + valor_imposto + custo_envio)."

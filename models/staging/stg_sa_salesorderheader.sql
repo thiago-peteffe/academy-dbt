@@ -10,7 +10,7 @@ with
             , customerid as id_cliente
             , creditcardid as id_cartao_credito
             , salespersonid as id_vendedor
-            , territoryid as id_territory
+            , territoryid as id_territorio
             , shiptoaddressid as id_endereco
             , shipmethodid as metodo_envio
             , round(subtotal, 2) as venda_subtotal

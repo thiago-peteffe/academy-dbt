@@ -14,8 +14,8 @@ with
                 else 'Não especificado'
             end as status_pedido
             , case
-                when flag_pedido = 1 then 'Pedido feito pelo vendedor'
-                when flag_pedido = 2 then 'Pedido feito on-line pelo cliente'
+                when flag_pedido = 0 then 'Pedido feito pelo vendedor'
+                when flag_pedido = 1 then 'Pedido feito on-line pelo cliente'
                 else 'Não especificado'
             end as flag_pedido
             , numero_pedido
@@ -25,7 +25,7 @@ with
                 else 'Outros Meios'
             end as metodo_pagamento
             , id_vendedor
-            , id_territory
+            , id_territorio
             , id_endereco
             , venda_subtotal
             , valor_imposto
@@ -49,7 +49,7 @@ select
     , id_cliente
     , id_endereco
     , id_vendedor
-    , id_territory
+    , id_territorio
     , data_pedido
     , status_pedido
     , flag_pedido
