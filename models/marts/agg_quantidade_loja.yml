@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: agg_quantidade_loja
+    description: 'Tabela agregada de vendas mensais por produto e loja.'
+    columns:
+      - name: 'nome_produto'
+        description: "Nome do produto."
+
+      - name: 'nome_cliente'
+        description: "Nome do cliente."
+
+      - name: 'regiao'
+        description: "Região da venda."
+
+      - name: 'ano'
+        description: "Ano da venda."
+
+      - name: 'mes'
+        description: "Mês da venda."
+
+      - name: 'data_base'
+        description: "Data base da venda."
+
+      - name: 'quantidade'
+        description: "Quantidade vendida."
